@@ -4,8 +4,6 @@ const { Client, MessageEmbed } = require('discord.js');
 const zeew = require('zeew-eco')//LLAMAMOS EL PACKAGE
 const { Economia } = new zeew.Economia()
 const { Banco } = new zeew.Banco()
-new zeew.Options("Tu URL de mongodb")//COLOCAMOS LA URL DE MONGO QUE ES DONDE SE GUARDARAN LOS DATOS
-
 
 module.exports = {
   name: "bal", 
