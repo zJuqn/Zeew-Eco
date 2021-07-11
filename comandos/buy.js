@@ -6,8 +6,8 @@ const { Economia } = new zeew.Tienda()
 
 
 module.exports = {
-  name: "bal", 
-  alias: ["balance"],
+  name: "buy", 
+  alias: [],
 
      /**
      *@param {Discord.client} client
