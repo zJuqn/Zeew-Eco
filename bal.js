@@ -3,6 +3,7 @@ const client = new Discord.Client();
 const { Client, MessageEmbed } = require('discord.js');
 const zeew = require('zeew-eco')//LLAMAMOS EL PACKAGE
 const { Economia } = new zeew.Economia()
+const { Banco } = new zeew.Banco()
 new zeew.Options("Tu URL de mongodb")//COLOCAMOS LA URL DE MONGO QUE ES DONDE SE GUARDARAN LOS DATOS
 
 
@@ -21,20 +22,19 @@ execute: async (client, message, args) => {
     let user = message.mentions.users.first() || message.author;//DEFINIMOS USUARIO
 
     let Manzana = await Economia.ver(user.id, message.guild.id)//OBTENEMOS EL DINERO
+    let BnacoMoney = await Banco.ver(user.id, message.guild.id)//OBTENEMOS EL DINERO DE EL BANCO
 
-    if(!Manzana){
-        let embed = new Discord.MessageEmbed()
-        .setTitle("Algo a salido mal")
-        .setDescription("Ese usuario no tiene dinero")
-        return message.channel.send(embed)//SI NO TIENE DINERO QUE RETORNE
-    } else {//Y SI TIENE DINERO (ABRIMOS ELSE)
-        let embedPeoJot4Ele = new Discord.MessageEmbed()
-        .setTitle("El dinero actual de "+ user.username +"")
-        .setDescription(`Es: **${Manzana}`)
-        .setColor("PURPLE")
-        message.channel.send(embedPeoJot4Ele)//ENVIA LA CANTIDAD DE DINERO QUE TIENE
-    }
+    if(!Manzana) return message.channel.send("Ese usuario no tiene dinero")
+    if(!BnacoMoney) return message.channel.send("Ese usuario no tiene dinero en el banco")
 
-//ESTO A SIDO TODO LIKE Y SUSCRIBANSE PARA MAS :D
+    let embed = new Discord.MessageEmbed()
+
+    .setTitle("Dinero de: "+ user.username +"")
+    .addField("Dinero:", Manzana)
+    .addField("Banco:", BnacoMoney)
+    .addField("Dinero total:", Manzana + BnacoMoney)
+
+ 
+
 
 }}
