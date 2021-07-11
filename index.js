@@ -2,6 +2,8 @@ const Discord = require('discord.js');
 const client = new Discord.Client();
 const { Client, MessageEmbed, Collection, Guild } = require('discord.js');
 require('dotenv').config();
+const zeew = require('zeew-eco')
+new zeew.Options("Tu URL de mongodb")//COLOCAMOS LA URL DE MONGO QUE ES DONDE SE GUARDARAN LOS DATOS
 
 
 const fs = require('fs'); 
