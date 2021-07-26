@@ -3,7 +3,7 @@ const client = new Discord.Client();
 const { Client, MessageEmbed, Collection, Guild } = require('discord.js');
 require('dotenv').config();
 const zeew = require('zeew-eco')
-new zeew.Options("mongodb+srv://zJuqnPeroSeLeezJuan:thedegamer148@cluster0.71nhd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority")
+new zeew.Options("monurl")
 
 
 const fs = require('fs'); 
@@ -11,7 +11,7 @@ let { readdirSync } = require('fs');
 
 const mongo = require('mongoose'); //Defines mongoose
 
-mongo.connect('mongodb+srv://zJuqnPeroSeLeezJuan:thedegamer148@cluster0.71nhd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority', { //Haces la conexion con la url
+mongo.connect('mongourl', { //Haces la conexion con la url
     useCreateIndex: true,
     useNewUrlParser: true,
     useUnifiedTopology: true,
