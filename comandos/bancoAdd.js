@@ -1,6 +1,3 @@
-const Discord = require('discord.js');
-const client = new Discord.Client();
-const { Client, MessageEmbed } = require('discord.js');
 const zeew = require('zeew-eco')//LLAMAMOS EL PACKAGE
 const  Banco  = new zeew.Banco()
 
